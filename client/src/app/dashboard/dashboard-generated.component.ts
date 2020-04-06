@@ -13,6 +13,8 @@ import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
 
+import { ConfigService } from '../config.service';
+
 
 export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
@@ -26,6 +28,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   route: ActivatedRoute;
 
   notificationService: NotificationService;
+
+  configService: ConfigService;
 
   dialogService: DialogService;
 
@@ -45,6 +49,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   ngOnInit() {
     this.notificationService = this.injector.get(NotificationService);
+
+    this.configService = this.injector.get(ConfigService);
 
     this.dialogService = this.injector.get(DialogService);
 

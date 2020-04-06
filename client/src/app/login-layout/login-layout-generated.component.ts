@@ -14,6 +14,8 @@ import { BodyComponent } from '@radzen/angular/dist/body';
 import { CardComponent } from '@radzen/angular/dist/card';
 import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
 
+import { ConfigService } from '../config.service';
+
 
 export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
@@ -28,6 +30,8 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   route: ActivatedRoute;
 
   notificationService: NotificationService;
+
+  configService: ConfigService;
 
   dialogService: DialogService;
 
@@ -47,6 +51,8 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   ngOnInit() {
     this.notificationService = this.injector.get(NotificationService);
+
+    this.configService = this.injector.get(ConfigService);
 
     this.dialogService = this.injector.get(DialogService);
 

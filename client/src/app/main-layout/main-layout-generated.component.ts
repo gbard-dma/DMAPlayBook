@@ -19,6 +19,8 @@ import { SidebarComponent } from '@radzen/angular/dist/sidebar';
 import { PanelMenuComponent } from '@radzen/angular/dist/panelmenu';
 import { FooterComponent } from '@radzen/angular/dist/footer';
 
+import { ConfigService } from '../config.service';
+
 
 export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
@@ -40,6 +42,8 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   notificationService: NotificationService;
 
+  configService: ConfigService;
+
   dialogService: DialogService;
 
   dialogRef: DialogRef;
@@ -58,6 +62,8 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   ngOnInit() {
     this.notificationService = this.injector.get(NotificationService);
+
+    this.configService = this.injector.get(ConfigService);
 
     this.dialogService = this.injector.get(DialogService);
 
