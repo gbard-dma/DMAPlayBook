@@ -1,0 +1,19 @@
+{
+  "dataSources": [],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "DMAPlayBook",
+  "navigation": [
+    "Dashboard"
+  ],
+  "pages": [
+    "Dashboard"
+  ],
+  "startPage": "Dashboard",
+  "theme": "ultima/dark-blue"
+}
