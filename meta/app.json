@@ -2,6 +2,9 @@
   "dataSources": [],
   "generator": "@radzen/angular-generator",
   "https": false,
+  "ignore": [
+    ""
+  ],
   "layouts": [
     "Login",
     "Main"
@@ -14,6 +17,11 @@
   "pages": [
     "Dashboard"
   ],
+  "port": "6000",
+  "serverLang": "cs",
+  "serverPort": 5000,
+  "serverProject": false,
+  "serverVersion": "3",
   "startPage": "Dashboard",
   "theme": "ultima/dark-blue"
 }

@@ -1,6 +1,6 @@
 {
   "name": "Dashboard",
-  "access": "Everybody",
+  "access": [],
   "layout": "Main",
   "components": [
     {
