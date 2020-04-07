@@ -1,4 +1,14 @@
 <rz-content #content1 container="main">
   <rz-heading #pageTitle size="H1" text="Dashboard">
   </rz-heading>
+  <rz-treegrid #treeGridQuery [data]="QueryResponse" [style]="{'height': '179px'}">
+    <rz-treegrid-column property="0" title="Projet">
+    </rz-treegrid-column>
+    <rz-treegrid-column property="1" title="Immeuble">
+    </rz-treegrid-column>
+    <rz-treegrid-column property="2" title="Actif">
+    </rz-treegrid-column>
+    <rz-treegrid-column property="3" title="Unité">
+    </rz-treegrid-column>
+  </rz-treegrid>
 </rz-content>

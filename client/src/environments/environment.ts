@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 export const environment = {
   serverMethodsUrl: 'http://localhost:5000/',
+  metabasepublic: 'https://metabase.dma.immo/api/public/card/',
   production: false,
 };

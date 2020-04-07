@@ -12,14 +12,17 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { TreeGridComponent } from '@radzen/angular/dist/treegrid';
 
 import { ConfigService } from '../config.service';
 
+import { MetabasepublicService } from '../metabasepublic.service';
 
 export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('pageTitle') pageTitle: HeadingComponent;
+  @ViewChild('TreeGridQuery') treeGridQuery: TreeGridComponent;
 
   router: Router;
 
@@ -42,6 +45,9 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  metabasepublic: MetabasepublicService;
+  QueryResponse: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -68,6 +74,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.metabasepublic = this.injector.get(MetabasepublicService);
   }
 
   ngAfterViewInit() {
@@ -77,6 +84,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -85,4 +93,13 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
     this._subscription.unsubscribe();
   }
 
+
+  load() {
+    this.metabasepublic.getQuery()
+    .subscribe((result: any) => {
+      this.QueryResponse = result.data.rows;
+    }, (result: any) => {
+      console.log(result)
+    });
+  }
 }

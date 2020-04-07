@@ -18,6 +18,7 @@ import { PanelMenuModule } from '@radzen/angular/dist/panelmenu';
 import { FooterModule } from '@radzen/angular/dist/footer';
 import { ContentModule } from '@radzen/angular/dist/content';
 import { HeadingModule } from '@radzen/angular/dist/heading';
+import { TreeGridModule } from '@radzen/angular/dist/treegrid';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -31,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
+import { MetabasepublicService } from './metabasepublic.service';
 
 export const PageDeclarations = [
   DashboardComponent,
@@ -53,6 +55,7 @@ export const AppProviders = [
     useClass: CacheInterceptor,
     multi: true
   },
+  MetabasepublicService,
   ConfigService,
   {
     provide: APP_INITIALIZER,
@@ -78,6 +81,7 @@ export const AppImports = [
   FooterModule,
   ContentModule,
   HeadingModule,
+  TreeGridModule,
   SharedModule,
   NotificationModule,
   DialogModule,

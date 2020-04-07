@@ -1,19 +1,70 @@
 {
-  "name": "Dashboard",
-  "access": [],
-  "layout": "Main",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Dashboard"
+          "size": "H1",
+          "text": "Dashboard",
+          "type": "heading"
+        },
+        {
+          "columns": [
+            {
+              "property": "0",
+              "title": "Projet"
+            },
+            {
+              "property": "1",
+              "title": "Immeuble"
+            },
+            {
+              "property": "2",
+              "title": "Actif"
+            },
+            {
+              "property": "3",
+              "title": "Unité"
+            }
+          ],
+          "data": "${QueryResponse}",
+          "name": "TreeGridQuery",
+          "style": {
+            "height": "179px"
+          },
+          "type": "treegrid",
+          "visible": true
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "events": {
+    "load": [
+      {
+        "error": [
+          {
+            "code": "console.log(${result})",
+            "type": "execute"
+          }
+        ],
+        "name": "metabasepublic.getQuery",
+        "parameters": [],
+        "then": [
+          {
+            "name": "QueryResponse",
+            "type": "set",
+            "value": "${result.data.rows}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Dashboard"
 }

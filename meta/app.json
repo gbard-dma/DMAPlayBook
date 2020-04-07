@@ -1,5 +1,7 @@
 {
-  "dataSources": [],
+  "dataSources": [
+    "metabasepublic"
+  ],
   "generator": "@radzen/angular-generator",
   "https": false,
   "ignore": [

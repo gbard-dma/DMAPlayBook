@@ -1,0 +1,102 @@
+{
+  "info": {
+    "title": "metabasepublic",
+    "x-withCredentials": false,
+    "x-type": "rest"
+  },
+  "host": "metabase.dma.immo",
+  "basePath": "/api/public/card/",
+  "definitions": {
+    "Query": {
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Data",
+          "type": "object"
+        }
+      }
+    },
+    "Rows": {
+      "properties": {
+        "0": {
+          "type": "string"
+        },
+        "1": {
+          "type": "string"
+        },
+        "2": {
+          "type": "boolean"
+        },
+        "3": {
+          "type": "string"
+        },
+        "4": {
+          "type": "string"
+        },
+        "5": {
+          "type": "string"
+        },
+        "6": {
+          "type": "number",
+          "format": "float"
+        },
+        "7": {
+          "type": "string"
+        },
+        "8": {
+          "type": "boolean"
+        },
+        "9": {
+          "type": "string"
+        },
+        "10": {
+          "type": "number",
+          "format": "float"
+        },
+        "11": {
+          "type": "string"
+        },
+        "12": {
+          "type": "number",
+          "format": "float"
+        },
+        "13": {
+          "type": "string"
+        },
+        "14": {
+          "type": "string"
+        },
+        "15": {
+          "type": "string"
+        }
+      }
+    },
+    "Data": {
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rows"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "6532f9e1-e726-49f0-91ac-959dd53ed663/query": {
+      "get": {
+        "operationId": "getQuery",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "schema": {
+              "$ref": "#/definitions/Query"
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ]
+}
