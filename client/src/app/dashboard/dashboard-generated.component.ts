@@ -99,7 +99,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
     .subscribe((result: any) => {
       this.QueryResponse = result.data.rows;
     }, (result: any) => {
-      console.log(result)
+
     });
   }
 }
